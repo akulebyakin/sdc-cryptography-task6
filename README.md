@@ -7,6 +7,7 @@ A Hardhat project implementing basic and upgradeable ERC20 tokens using OpenZepp
 This project contains:
 - **MyToken** - Basic ERC20 token with minting
 - **MyTokenV1/V2** - Upgradeable ERC20 using UUPS proxy pattern
+- **MultiSigWallet** - Multi-signature wallet requiring multiple confirmations
 
 ## Installation
 
@@ -22,15 +23,19 @@ task6/
 ├── contracts/
 │   ├── MyToken.sol           # Basic ERC20
 │   ├── MyTokenV1.sol          # Upgradeable V1
-│   └── MyTokenV2.sol          # Upgradeable V2
+│   ├── MyTokenV2.sol          # Upgradeable V2
+│   └── MultiSigWallet.sol     # Multi-sig wallet
 ├── scripts/
 │   ├── deploy.js              # Deploy basic token
 │   ├── deploy-proxy.js        # Deploy V1 with proxy
 │   ├── upgrade-to-v2.js       # Upgrade to V2
 │   ├── interact.js            # Interact with contracts
-│   └── send-eth.js            # Send ETH to address
+│   ├── send-eth.js            # Send ETH to address
+│   ├── deploy-multisig.js     # Deploy multi-sig wallet
+│   └── interact-multisig.js   # Interact with multi-sig
 └── test/
-    └── MyToken.test.js        # Tests
+    ├── MyToken.test.js        # ERC20 tests
+    └── MultiSigWallet.test.js # Multi-sig tests
 ```
 
 ## Usage
@@ -69,6 +74,14 @@ npx hardhat run scripts/deploy-proxy.js --network localhost
 
 Save the proxy address from output.
 
+### Deploy Multi-Sig Wallet
+
+```bash
+npx hardhat run scripts/deploy-multisig.js --network localhost
+```
+
+Save the wallet address from output.
+
 ### Interact with Token
 
 ```bash
@@ -79,6 +92,12 @@ PROXY_ADDRESS=0x... npx hardhat run scripts/interact.js --network localhost
 
 ```bash
 PROXY_ADDRESS=0x... npx hardhat run scripts/upgrade-to-v2.js --network localhost
+```
+
+### Interact with Multi-Sig
+
+```bash
+MULTISIG_ADDRESS=0x... npx hardhat run scripts/interact-multisig.js --network localhost
 ```
 
 ## Testing
@@ -141,8 +160,13 @@ PROXY_ADDRESS=0x... npx hardhat run scripts/interact.js --network localhost
 
 # Send ETH
 RECEIVER=0xYourAddress AMOUNT=100 npx hardhat run scripts/send-eth.js --network localhost
-```
 
+# Deploy multi-sig
+npx hardhat run scripts/deploy-multisig.js --network localhost
+
+# Interact with multi-sig
+MULTISIG_ADDRESS=0x... npx hardhat run scripts/interact-multisig.js --network localhost
+```
 
 ## License
 
