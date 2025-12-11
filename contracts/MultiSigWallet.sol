@@ -60,7 +60,7 @@ contract MultiSigWallet {
     }
 
     // Initialize the multi-sig wallet with owners and confirmation threshold
-    constructor(address[] memory _owners, uint256 _numConfirmationsRequired) {
+    constructor(address[] memory _owners, uint256 _numConfirmationsRequired) {  // Make non-configurable
         require(_owners.length > 0, "owners required");
         require(
             _numConfirmationsRequired > 0 &&

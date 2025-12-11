@@ -1,7 +1,7 @@
 const { ethers } = require("hardhat");
 
 async function main() {
-    const MULTISIG_ADDRESS = process.env.MULTISIG_ADDRESS || "YOUR_MULTISIG_ADDRESS_HERE";
+    const MULTISIG_ADDRESS = process.env.MULTISIG_ADDRESS || "0x68B1D87F95878fE05B998F19b66F4baba5De1aed";
 
     if (MULTISIG_ADDRESS === "YOUR_MULTISIG_ADDRESS_HERE") {
         console.error("\nERROR: Please set the MULTISIG_ADDRESS environment variable");
