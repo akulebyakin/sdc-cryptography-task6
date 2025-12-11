@@ -1,0 +1,42 @@
+.assignment-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  color: var(--primary);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-header p {
+  color: #6b7280;
+  font-size: 1.125rem;
+}
+
+.status-indicator {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.status-connected {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-disconnected {
+  background: #fee2e2;
+  color: #991b1b;
+}
